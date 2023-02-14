@@ -2,6 +2,15 @@
 
 class Animal
 
+    #generates the getter method
+    attr_reader :limbs
+
+    #generates the setter method
+    attr_writer :limbs
+
+    #generates both the setter and getter method
+    attr_accessor :height
+
     @lifespan = 24
 
     # getter method for lifespan
@@ -17,6 +26,7 @@ class Animal
     def initialize(name)
         puts "#{name} has been created"
         @species = "Homo Sapiens Sapiens"
+        @limbs = 0
     end
 
     # getter method for species
@@ -84,3 +94,10 @@ giraffe.get_sound = "Hum"
 
 puts giraffe.get_sound
 puts zebra.get_sound
+
+giraffe.limbs = 4
+puts giraffe.limbs
+
+
+zebra.height = 12
+puts zebra.height
