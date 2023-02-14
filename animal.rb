@@ -9,21 +9,13 @@ class Animal
     attr_writer :limbs
 
     #generates both the setter and getter method
-    attr_accessor :height
+    attr_accessor :height, :name, :lifespan
 
     @lifespan = 24
 
-    # getter method for lifespan
-    def lifespan_length
-        @lifespan
-    end
-
-    # setter method for lifespan
-    def lifespan_length=(life_value)
-        @lifespan = life_value
-    end
-
-    def initialize(name)
+    def initialize(name, lifespan)
+        @name = name
+        @lifespan = lifespan
         puts "#{name} has been created"
         @species = "Homo Sapiens Sapiens"
         @limbs = 0
@@ -63,8 +55,8 @@ end
 
 # TODO: Use self to access instance variables
 #object
-zebra = Animal.new("African Zebra")
-giraffe = Animal.new("African Giraffe")
+zebra = Animal.new("African Zebra", 24)
+giraffe = Animal.new("African Giraffe", 25)
 
 #setting the species value
 zebra.species_name = "Equus grevyi"
@@ -78,13 +70,8 @@ puts "Giraffe: #{giraffe}"
 
 giraffe.move
 
-
-#setting the lifespan value
-zebra.lifespan_length = 23
-giraffe.lifespan_length = 24
-
-puts giraffe.lifespan_length
-puts zebra.lifespan_length
+puts giraffe.lifespan
+puts zebra.lifespan
 
 
 #setting the sound value
